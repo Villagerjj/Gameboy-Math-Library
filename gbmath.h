@@ -1,9 +1,8 @@
 #ifndef GBMATH_H
 #define GBMATH_H
-//GB math version 1.5
-
 
 #include <stdint.h>
+#include <stdlib.h>
 
 #define TABLE_SIZE 256
 
@@ -36,7 +35,7 @@ static inline GBfloat GBfloatAdd(GBfloat a, GBfloat b) {
     return a + b;
 }
 
-static inline GBfloat GBfloatSubtract(GBfloat a, GBfloat b) {
+static inline GBfloat GBfloatSub(GBfloat a, GBfloat b) {
     return a - b;
 }
 
@@ -50,7 +49,17 @@ static inline GBfloat GBfloatDivide(GBfloat a, GBfloat b) {
 
 // Conversion function
 static inline GBfloat floatToGBfloat(int8_t whole_number, uint8_t decimal) {
-    return (GBfloat)((whole_number << GB_FLOAT_FRACTIONAL_BITS) + (decimal & 0xFF));
+    int16_t result;
+    if (whole_number < 0) {
+        result = -((abs(whole_number) << GB_FLOAT_FRACTIONAL_BITS) + (decimal & 0xFF));
+    } else {
+        result = (whole_number << GB_FLOAT_FRACTIONAL_BITS) + (decimal & 0xFF);
+    }
+    return result;
+}
+
+static inline int8_t GBfloatToInt8(GBfloat value) {
+    return (int8_t)(value >> GB_FLOAT_FRACTIONAL_BITS);
 }
 
 #endif // GBMATH_H
