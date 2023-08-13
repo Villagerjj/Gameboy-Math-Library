@@ -11,9 +11,9 @@ Include it in your code.
 
 |Function|Input Kind|Output Kind|
 |----------------|-------------------------------|-----------------------------|
-|`fast_sin()`|uint8_t  `angle`|int8_t|
-|`fast_cos()`|uint8_t  `angle`|int8_t|
-|`fast_tan()`|uint8_t  `angle`|int8_t|
+|`fast_sin()`|uint8_t  `angle`|int8_t `[Sin of Angle]`|
+|`fast_cos()`|uint8_t  `angle`|int8_t `[Cos of Angle]`|
+|`fast_tan()`|uint8_t  `angle`|int8_t `[Tan of Angle]`|
 
 
 ## Sin, Cos, and Tan Lookup tables:
