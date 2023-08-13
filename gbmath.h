@@ -39,8 +39,18 @@ static inline GBfloat GBfloatSub(GBfloat a, GBfloat b) {
     return a - b;
 }
 
+
 static inline GBfloat GBfloatMultiply(GBfloat a, GBfloat b) {
-    return (GBfloat)(((int32_t)a * b) >> GB_FLOAT_FRACTIONAL_BITS);
+    int32_t result = ((int32_t)a * b + (1 << (GB_FLOAT_FRACTIONAL_BITS - 1))) >> GB_FLOAT_FRACTIONAL_BITS;
+    int16_t integerPart = result >> GB_FLOAT_FRACTIONAL_BITS;
+    uint8_t fractionalPart = result & 0xFF;
+
+    if (fractionalPart > 99) {
+        integerPart++;
+        fractionalPart -= 100;
+    }
+
+    return (GBfloat)((integerPart << GB_FLOAT_FRACTIONAL_BITS) + fractionalPart);
 }
 
 static inline GBfloat GBfloatDivide(GBfloat a, GBfloat b) {
