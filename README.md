@@ -35,3 +35,6 @@ I am considering a separate look up table to save speed.
 
 
 </details>
+
+> **Note:** I do not promise that these functions are truly fast.
+all I can advise is to not overdo the tan function, as it uses division.
