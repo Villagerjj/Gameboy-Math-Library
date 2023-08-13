@@ -1,3 +1,8 @@
+#ifndef GBMATH_H
+#define GBMATH_H
+//GB math version 1.5
+
+
 #include <stdint.h>
 
 #define TABLE_SIZE 256
@@ -21,3 +26,31 @@ int8_t fast_tan(uint8_t angle) {
     // Calculate tangent as sin(angle) / cos(angle)
     return (fast_sin(angle) << 8) / fast_cos(angle);
 }
+
+// Define the fixed-point format
+#define GB_FLOAT_FRACTIONAL_BITS 8
+typedef int16_t GBfloat;
+
+// Basic arithmetic operations
+static inline GBfloat GBfloatAdd(GBfloat a, GBfloat b) {
+    return a + b;
+}
+
+static inline GBfloat GBfloatSubtract(GBfloat a, GBfloat b) {
+    return a - b;
+}
+
+static inline GBfloat GBfloatMultiply(GBfloat a, GBfloat b) {
+    return (GBfloat)(((int32_t)a * b) >> GB_FLOAT_FRACTIONAL_BITS);
+}
+
+static inline GBfloat GBfloatDivide(GBfloat a, GBfloat b) {
+    return (GBfloat)((((int32_t)a << GB_FLOAT_FRACTIONAL_BITS) / b));
+}
+
+// Conversion function
+static inline GBfloat floatToGBfloat(int8_t whole_number, uint8_t decimal) {
+    return (GBfloat)((whole_number << GB_FLOAT_FRACTIONAL_BITS) + (decimal & 0xFF));
+}
+
+#endif // GBMATH_H
