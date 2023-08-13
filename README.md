@@ -1,11 +1,12 @@
+
 # gbmath.h
 
 This is a new library for GBDK that adds functions such as sin, cos, and tan to your GBDK project.
 
 
-# Usage
+# "Installation"
 Download the `gbmath.h` file, and put it in a location you can remember. 
-Include it in your code.
+Include it in your code via `#include <path/to/gbmath.h>`
 
 ## Inputs and Outputs
 
@@ -15,6 +16,9 @@ Include it in your code.
 |`fast_cos()`|uint8_t  `angle`|int8_t `[Cos of Angle]`|
 |`fast_tan()`|uint8_t  `angle`|int8_t `[Tan of Angle]`|
 
+## Examples
+I have an examples folder that contains a simple tank control example.
+More to come soon.
 
 ## Sin, Cos, and Tan Lookup tables:
 
