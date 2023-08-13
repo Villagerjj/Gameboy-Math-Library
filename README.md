@@ -42,5 +42,8 @@ I am considering a separate look up table to save speed.
 
 </details>
 
+# Contributing
+if you have a new function or optimizations you want added, you can make a pull request. (or file an issue)
+
 > **Note:** I do not promise that these functions are truly fast.
 all I can advise is to not overdo the tan function, as it uses division.
