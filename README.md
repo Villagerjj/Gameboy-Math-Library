@@ -17,8 +17,10 @@ Include it in your code via `#include <path/to/gbmath.h>`
 |`fast_tan()`|uint8_t  `angle`|int8_t `[Tan of Angle]`|
 
 ## Examples
-I have an examples folder that contains a simple tank control example.
+I have an examples folder that contains example uses for each function.
 More to come soon.
+#### Tank Controls
+This example shows how you can use these functions to rotate a "player" (in this case a dot) 
 
 ## Sin, Cos, and Tan Lookup tables:
 
