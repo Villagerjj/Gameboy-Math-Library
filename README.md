@@ -1,4 +1,5 @@
 
+
 # gbmath.h
 
 This is a new library for GBDK that adds functions such as sin, cos, and tan to your GBDK project.
@@ -8,19 +9,30 @@ This is a new library for GBDK that adds functions such as sin, cos, and tan to 
 Download the `gbmath.h` file, and put it in a location you can remember. 
 Include it in your code via `#include <path/to/gbmath.h>`
 
-## Inputs and Outputs
+## Functions 
 
-|Function|Input Kind|Output Kind|
-|----------------|-------------------------------|-----------------------------|
-|`fast_sin()`|uint8_t  `angle`|int8_t `[Sin of Angle]`|
-|`fast_cos()`|uint8_t  `angle`|int8_t `[Cos of Angle]`|
-|`fast_tan()`|uint8_t  `angle`|int8_t `[Tan of Angle]`|
+|Function|Input Kind|Output Kind|Notes|
+|----------------|-------------------------------|-----------------------------|-|
+|`fast_sin()`|uint8_t  `angle`|int8_t `[Sin of Angle]`| is not a `GBfloat` type
+|`fast_cos()`|uint8_t  `angle`|int8_t `[Cos of Angle]`| is not a `GBfloat` type
+|`fast_tan()`|uint8_t  `angle`|int8_t `[Tan of Angle]`| is not a `GBfloat` type
+|`GBfloatAdd()`|GBfloat `a` GBfloat `b`|GBfloat `[sum]`|not required for addition.
+|`GBfloatSub()`|GBfloat `a` GBfloat `b`|GBfloat `[sum]`|not required for subtraction.
+|`GBfloatMultiply()`|GBfloat `a` GBfloat `b`|GBfloat `[sum]`|this is required to multiply 2 `GBfloat` variables.
+|`GBfloatDivide()`|GBfloat `top` GBfloat `bottom`|GBfloat `[sum]`|this is required to divide 2 `GBfloat` variables.
+|`floatToGBfloat()`|int8_t `whole_number` uint8_t `decimal` |GBfloat `[fixed point number]`| if you want to pass `1.20` into a `GBfloat`: `floatToGBfloat(1, 20);`
+|`GBfloatToInt8()`|GBfloat `number` |int8_t `[rounded_whole_number]` |will round a `GBfloat 1.51` to a `int8_t 2`.
 
 ## Examples
 I have an examples folder that contains example uses for each function.
 More to come soon.
+
 #### Tank Controls
 This example shows how you can use these functions to rotate a "player" (in this case a dot) 
+
+#### GBfloats
+This example shows off how to use the new `GBfloat` (`int16_t`) variable type. it lets you easily use floating point numbers in gbdk. (as of now, there is no sin, cos, or tan functions that use this variable type, this is being worked on)
+
 
 ## Sin, Cos, and Tan Lookup tables:
 
