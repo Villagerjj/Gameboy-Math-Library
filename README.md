@@ -16,7 +16,7 @@ Include it in your code.
 |`fast_tan()`|uint8_t  `angle`|int8_t|
 
 
-## Lookup tables:
+## Sin, Cos, and Tan Lookup tables:
 
 <details>
   <summary>(Click to Show)</summary>
