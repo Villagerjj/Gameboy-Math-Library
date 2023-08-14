@@ -13,6 +13,10 @@ Download the `gbmath.h` file, and put it in a location you can remember.
 Include it in your code via `#include <path/to/gbmath.h>`
 
 ## Functions 
+> **Note:** you can add a "u" to any of the GBfloat functions to get unsigned float values.
+for example, `GBfloatMultiply()` becomes `uGBfloatMultiply()` and `floatToGBfloat()` becomes `floatToUGBfloat()`.
+another exception: `GBfloatToInt16()` becomes `uGBfloatToUint16()`
+remember to use these functions with uGBfloat variable types only!
 
 |Function|Input Kind|Output Kind|Notes|
 |----------------|-------------------------------|-----------------------------|-|
