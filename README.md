@@ -2,7 +2,7 @@
 
 # gbmath.h
 
-This is a new library for GBDK that adds functions such as sin, cos, and tan to your GBDK project.
+This is a new library for GBDK that adds functions such as sin, cos, floating point numbers and more to your GBDK project.
 
 
 # "Installation"
