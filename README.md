@@ -12,8 +12,18 @@ all I can advise is to not overdo functions that use division.
 Download the `gbmath.h` file, and put it in a location you can remember. 
 Include it in your code via `#include <path/to/gbmath.h>`
 
+# Limits
+a typical GBfloat can only store numbers -127.00 to +127.99
+if you need only positive numbers, you can instead use a `uGBfloat` to get from 0.00 to 255.99
+
+## Current issues
+this library is not quite usable yet, as there are a few bugs and some major inaccuracies.
+I am working on fixing them, but of course, if you want to contribute feel free to do so! 
+
 ## Functions 
-> **Note:** you can add a "u" to any of the GBfloat functions to get unsigned float values.
+
+#### Unsigned variables
+you can add a "u" to any of the GBfloat functions to get unsigned float values.
 for example, `GBfloatMultiply()` becomes `uGBfloatMultiply()` and `floatToGBfloat()` becomes `floatToUGBfloat()`.
 another exception: `GBfloatToInt16()` becomes `uGBfloatToUint16()`
 remember to use these functions with uGBfloat variable types only!
