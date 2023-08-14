@@ -5,6 +5,9 @@
 This is a new library for GBDK that adds functions such as sin, cos, floating point numbers and more to your GBDK project.
 
 
+> **Note:** I do not promise that these functions are truly fast or efficient.
+all I can advise is to not overdo functions that use division.
+
 # "Installation"
 Download the `gbmath.h` file, and put it in a location you can remember. 
 Include it in your code via `#include <path/to/gbmath.h>`
@@ -94,5 +97,4 @@ I am considering a separate look up table to save speed.
 # Contributing
 if you have a new function or optimizations you want added, you can make a pull request. (or file an issue)
 
-> **Note:** I do not promise that these functions are truly fast.
-all I can advise is to not overdo the tan function, as it uses division.
+
