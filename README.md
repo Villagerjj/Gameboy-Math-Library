@@ -33,7 +33,7 @@ Include it in your code via `#include <path/to/gbmath.h>`
 ## Defined stuff
 
 |Thingymabob|value|usage|
-|----------------|-------------------------------|-----------------------------|-|
+|----------------|-------------------------------|-----------------------------|
 |`TABLE_SIZE`|256|for various fast sin/cos/tan LUT functions
 |`GBFLOAT_TABLE_SIZE`|256|for various GBfloat sin/cos/tan LUT functions
 |`GB_FLOAT_FRACTIONAL_BITS`|8| for bitwise operations, feel free to change this at your own risk.|
