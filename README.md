@@ -1,5 +1,6 @@
 
 
+
 # gbmath.h
 
 This is a new library for GBDK that adds functions such as sin, cos, floating point numbers and more to your GBDK project.
@@ -19,6 +20,11 @@ if you need only positive numbers, you can instead use a `uGBfloat` to get from 
 ## Current issues
 this library is not quite usable yet, as there are a few bugs and some major inaccuracies.
 I am working on fixing them, but of course, if you want to contribute feel free to do so! 
+
+ - Subtraction is inaccurate
+ - division is inaccurate
+ - most GBfloat functions are inefficient
+ - some functions output numbers like `1.345` 
 
 ## Functions 
 
