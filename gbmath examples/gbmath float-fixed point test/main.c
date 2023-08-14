@@ -2,57 +2,47 @@
 #include <stdint.h>
 #include <gb/drawing.h>
 #include <stdio.h>
-#include "gbmath.h" 
+#include "gbmath.h"
+
+void main() {
+
+    SHOW_BKG;
+    SHOW_SPRITES;
+
+    uint8_t angle = 45; // Angle in degrees
+    uint8_t Rangle = 1; // Angle in radians
+    // Test fast_sin, fast_cos, and fast_tan
+    printf("Fast Functions:\n");
+    printf("Angle(R): %d\n", Rangle);
+    printf("Fast sin: %d\n", fast_sin(Rangle));
+    printf("Fast cos: %d\n", fast_cos(Rangle));
+    printf("Fast tan: %d\n", fast_tan(Rangle));
+
+    // Test GBfloat_sin, GBfloat_cos, and GBfloat_tan
+    GBfloat gb_angle = floatToGBfloat(angle, 0);
+    printf("GBfloat Functions:\n");
+    printf("Angle(R): %d.%02d)\n", GBfloatToInt16(gb_angle));
+    printf("GBfloat sin: %d.%02d\n", GBfloat_sin(gb_angle) / 256, GBfloat_sin(gb_angle) % 256);
+    printf("GBfloat cos: %d.%02d\n", GBfloat_cos(gb_angle) / 256, GBfloat_cos(gb_angle) % 256);
+    printf("GBfloat tan: %d.%02d\n", GBfloat_tan(gb_angle) / 256, GBfloat_tan(gb_angle) % 256);
+
+    // Test GBfloat arithmetic operations
+    GBfloat a = floatToGBfloat(1, 0);
+    GBfloat b = floatToGBfloat(0, 50);
+    uGBfloat c = floatToUGBfloat(255, 99);
+    GBfloat result_add = GBfloatAdd(a, b);
+    uGBfloat result_sub = uGBfloatSub(a, b);
+    GBfloat result_mul = GBfloatMultiply(a, b);
+    uGBfloat result_div = uGBfloatDivide(a, b);
+     
+    printf("GBfloat Maths:\n");
+    printf("a: %d.%02d\n", a / 256, a % 256);
+    printf("b: %d.%02d\n", b / 256, b % 256);
+    printf("unsigned c: %d.%02d\n", c / 256, c % 256);
+    printf("Addition: %d.%02d\n", result_add/ 256, result_add% 256);
+    printf("Subtraction: %d.%02d\n", result_sub / 256, result_sub % 256);
+    printf("Multiplication: %d.%02d\n", result_mul/ 256, result_mul% 256);
+    printf("Division: %d.%02d\n", result_div/ 256, result_div% 256);
 
 
-
-uint8_t main() {
-    // Raw fixed-point values (1.45 and 0.10 as 8-bit fixed-point)
-    GBfloat angle = floatToGBfloat(69, 00);  // 1.45 in 8-bit fixed-point 
-    GBfloat sinValue = GBfloat_sin(angle);
-    GBfloat cosValue = GBfloat_cos(angle);
-    GBfloat tanValue = GBfloat_tan(angle);
-    GBfloat FastsinValue = fast_sin(GBfloatToInt8(angle));
-    GBfloat FastcosValue = fast_cos(GBfloatToInt8(angle));
-    GBfloat FasttanValue = fast_tan(GBfloatToInt8(angle));
- 
-    GBfloat IncreaseBy = floatToGBfloat(0, 10);  // 0.10 in 8-bit fixed-point 
-    GBfloat DecreaseBy = floatToGBfloat(0, 1);  // 0.10 in 8-bit fixed-point 
-      
-    GBfloat TestNumber = floatToGBfloat(5, 50);
-    
-   
-
-
-    printf("test: %d.%02d\n", TestNumber / 256, TestNumber % 256);
-    printf("test (rounded): %d\n", GBfloatToInt8(TestNumber));
-
- 
-    // Add
-    GBfloat newAngle = GBfloatAdd(TestNumber, IncreaseBy);
-    printf("add .10: %d.%02d\n", newAngle / 256, newAngle % 256);
-
-    // Subtract
-    GBfloat decreasedAngle = GBfloatSub(newAngle, DecreaseBy);
-    printf("subtract .01: %d.%02d\n", decreasedAngle / 256, decreasedAngle % 256);
-
-    // Multiply
-    GBfloat multipliedAngle = GBfloatMultiply(TestNumber, floatToGBfloat(2, 0));
-    printf("test x 2: %d.%02d\n", multipliedAngle / 256, multipliedAngle % 256);
-
-    // Divide
-    GBfloat dividedAngle = GBfloatDivide(TestNumber, floatToGBfloat(2, 0));
-    printf("test / 2: %d.%02d\n", dividedAngle / 256, dividedAngle % 256);
-   
-    printf("Angle(D): %d.%02d\n", angle / 256, angle % 256); 
-    printf("Angle(R): %d.%02d\n", GBfloatDegreesToRadians(angle) / 256, GBfloatDegreesToRadians(angle) % 256); 
-    printf("Angle(Rounded): %d\n", GBfloatToInt8(angle));
-    printf("FloatSin(D): %d.%02d\n", GBfloatRadiansToDegrees(sinValue) / 256, GBfloatRadiansToDegrees(sinValue) % 256);
-    printf("FloatCos(R): %d.%02d\n", cosValue / 256, cosValue % 256);
-    printf("FloatTan(R): %d.%02d\n", tanValue / 256, tanValue % 256);
-    printf("FastSin(D): %d.%02d\n", GBfloatRadiansToDegrees(FastsinValue) / 256, GBfloatRadiansToDegrees(FastsinValue) % 256);
-    printf("FastCos(R): %d.%02d\n", FastcosValue / 256, FastcosValue % 256);
-    printf("FastTan(R): %d.%02d\n", FasttanValue / 256, FasttanValue % 256);
-       
-    return 0;
 }
