@@ -32,6 +32,7 @@ typedef int16_t GBfloat;
 typedef uint16_t uGBfloat;
 //how many numbers in the lookup tables for GBfloats.
 #define GBFLOAT_TABLE_SIZE 256
+#define UGBFLOAT_TABLE_SIZE 256
 //signed PI (GBfloat)
 #define GBFLOAT_PI floatToGBfloat(3, 14)
 //unsigned PI (uGBfloat)
