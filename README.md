@@ -1,4 +1,4 @@
-
+# THIS IS OBSOLETE USE THIS INSTEAD: https://sourceforge.net/projects/fixedptc/
 
 
 # gbmath.h
